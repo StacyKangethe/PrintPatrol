@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home';
 import Shop from './Pages/Shop';
 import Blog from "./Pages/Blog";
 import About from './Pages/About';
@@ -10,7 +11,8 @@ function RoutesTree() {
     return (
         <div>
             <Routes>
-                <Route path="/" element={<Shop />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/shop" element={<Shop />} />
                 <Route path="dropoffpoint" element={<DropOffPoints />} />
                 <Route path="recyclingcompanies" element={<RecyclingCompanies />} />
                 <Route path="wastecompanies" element={<WasteCompanies />} />

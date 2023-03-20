@@ -4,7 +4,8 @@ function Navigation() {
     return (
         <div>
             <nav>
-                <Link to='/'>Shop</Link>
+                <Link to='/'>Home</Link>
+                <Link to='/shop'>Shop</Link>
                 <Link to='/dropoffpoint'>DropOffPoints</Link>
                 <Link to='/recyclingcompanies'>RecyclingCompanies</Link>
                 <Link to='/wastecompanies'>WasteCompanies</Link>
