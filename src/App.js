@@ -1,14 +1,16 @@
 import './App.css';
-import Navigation from './Components/Navigation';
 import Footer from './Components/Footer';
 import RoutesTree from './Components/RoutesTree';
+import ResponsiveAppBar from './Components/ResponsiveAppBar';
+import Hero from './Components/Hero';
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <RoutesTree />
-      <Footer />
+      <ResponsiveAppBar />
+      <Hero />
+      <Footer /> 
+      <RoutesTree />    
     </div>
   );
 }
