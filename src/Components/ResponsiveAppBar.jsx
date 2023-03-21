@@ -10,6 +10,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
+
 
 
 const pages = ['Shop', 'Recycling Drop-Off Points', 'Recycling Companies', 'Waste Management Companies', 'Blog', 'About'];
@@ -33,12 +35,14 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+ 
+
+  
 
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          
           <Typography
             variant="h6"
             noWrap
@@ -64,9 +68,8 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="secondary"
             >
-             
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -88,12 +91,20 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <nav>
+                        <Link to='/'>Home</Link>
+                        <Link to='/shop'>Shop</Link>
+                        <Link to='/dropoffpoint'>DropOffPoints</Link>
+                        <Link to='/recyclingcompanies'>RecyclingCompanies</Link>
+                        <Link to='/wastecompanies'>WasteCompanies</Link>
+                        <Link to='/blog'>Blog</Link>
+                        <Link to='/about'>About</Link>
+                    </nav>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          
           <Typography
             variant="h5"
             noWrap
@@ -127,7 +138,7 @@ function ResponsiveAppBar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/images/ABBIE.png" />
+                <Avatar  alt="Stacy Kangethe" src="../assets/ABBIE.png" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -158,4 +169,5 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;
