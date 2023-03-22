@@ -39,6 +39,15 @@ video {
   color: white;
 }
 
+/*text animation styles */
+.heading-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 .overlay {
   position: absolute;
   top: 0%;

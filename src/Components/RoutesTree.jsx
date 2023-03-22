@@ -7,6 +7,8 @@ import WasteCompanies from "./Pages/WasteCompanies";
 import Hero from './Hero';
 import FeaturedPost from './Pages/FeaturedPost';
 import About from './Pages/About';
+import SignIn from '../SignIn';
+import SignUp from '../SignUp';
 
 function RoutesTree() {
     return (
@@ -20,6 +22,8 @@ function RoutesTree() {
                 <Route path="blog" element={<Blog />} />
                 <Route path="featuredpost" element={<FeaturedPost />} />
                 <Route path="about" element={<About />} />
+                <Route path="signin" element={<SignIn />} />
+                <Route path="signup" element={<SignUp />} />
 
             </Routes>
         </div>

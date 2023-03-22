@@ -10,6 +10,8 @@ import RecyclingCompanies from './Components/Pages/RecyclingCompanies';
 import Shop from './Components/Pages/Shop';
 import Navigation from './Components/Navigation';
 import FeaturedPost from './Components/Pages/FeaturedPost';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Shop />
       <DropOffPoints />
       <RecyclingCompanies />
+      <SignUp />
+      <SignIn />
       <Stack
        direction={{ xs: 'column', sm: 'row' }}
        spacing={{ xs: 1, sm: 2, md:4 }}
