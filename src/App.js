@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Footer from './Components/Footer';
 import RoutesTree from './Components/RoutesTree';
 import ResponsiveAppBar from './Components/ResponsiveAppBar';
@@ -12,12 +12,12 @@ import Navigation from './Components/Navigation';
 import FeaturedPost from './Components/Pages/FeaturedPost';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
-      <ResponsiveAppBar />
+      <Navbar />
       <Hero />
       <FeaturedPost />
       <Shop />

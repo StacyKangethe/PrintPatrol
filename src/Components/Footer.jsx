@@ -2,7 +2,7 @@ function Footer() {
     return (
         <div>
             <footer>
-                <p>Copyright &copy; My Webapp</p>
+                <p>Copyright &copy; Glass Recycling Management System Webapp</p>
             </footer>
         </div>
     );

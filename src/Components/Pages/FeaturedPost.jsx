@@ -24,7 +24,7 @@ const FeaturedPost = (props) => {
             Description {props.description}
             </Typography>
             <Typography variant="subtitle1" color="primary">
-              Continue reading...
+              Continue reading... 
             </Typography>
           </CardContent>
           <CardContent sx={{ flex: 1 }}>

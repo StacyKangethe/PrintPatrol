@@ -4,10 +4,13 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { Button } from "@mui/material";
+import Navbar from "../Navbar";
+
 
 function Shop() {
     return (
         <Box bgcolor="lightyellow">
+            <Navbar />
             <h2>BENEFITS OF GLASS</h2>
             <p>100% Recyclable
             Learn the economics of the glass ecosystem.

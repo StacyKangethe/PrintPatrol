@@ -9,10 +9,10 @@ function Hero() {
     return (
         <div className="bgContainer">
             <div className="overlay"></div>
-                <video src={video} autoPlay loop muted />
+            <video src={video} autoPlay loop muted />
          
                 <div className="container">    
-                    <MovingText  
+                    <MovingText  className="heading"
                         type="typewriter"
                         duration="1600ms"
                         delay="0s"
@@ -28,10 +28,9 @@ function Hero() {
                         'YOU'
                         ]} />
                          
-                    <Button color="primary" variant="contained">
+                    <Button color="secondary" variant="contained">
                     Learn More
-                    </Button>
-                    
+                    </Button>    
                 </div>
         </div>
         
