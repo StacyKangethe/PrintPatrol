@@ -11,7 +11,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import { useAuth0 } from "@auth0/auth0-react";
 
 const theme = createTheme();
 
@@ -24,6 +24,8 @@ function SignUp() {
         password: data.get('password'),
       });
     };
+
+    const { loginWithRedirect } = useAuth0();
   
     return (
       <ThemeProvider theme={theme}>
@@ -94,14 +96,17 @@ function SignUp() {
                   />
                 </Grid>
               </Grid>
+             <Link to="/responsive-app-bar">
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
+                onClick={() => loginWithRedirect()}
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign Up
               </Button>
+              </Link>
               <Grid container justifyContent="flex-end">
                 <Grid item>
                   <Link href="#" variant="body2">

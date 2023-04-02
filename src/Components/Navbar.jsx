@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Navbar() {
   const navigate = useNavigate();
+  const { loginWithRedirect } = useAuth0();
+  const { logout } = useAuth0();
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
     width: 0,
@@ -31,11 +34,15 @@ function Navbar() {
   const menuToggleHandler = () => {
     setMenuOpen((p) => !p);
   };
-
+  
   return (
     <header className="header">
       <div className="header__content">
+        <div className="header__content__logo">
+        GLASS<br></br>THRIFT
+        </div>
         <img src="Logo.png" className="App-logo" alt="logo" ></img>
+        
         <nav
           className={`${"header__content__nav"} 
           ${menuOpen && size.width < 768 ? `${"isMenu"}` : ""} 
@@ -49,23 +56,23 @@ function Navbar() {
           <Link to="/shop">Shop</Link>
           </li>
           <li>
-          <Link to="/DropOffPOints">Drop-Off Points</Link>
+          <Link to="/drop-off-points">Drop-Off Points</Link>
           </li>
           <li>
-          <Link to="/FeaturedPost">Companies</Link>
+          <Link to="/featured-post">Companies</Link>
           </li>
           <li>
-          <Link to="/About">About</Link>
+          <Link to="/about">About</Link>
           </li>
           <li>
-          <Link to="/Blog">Blog</Link>
+          <Link to="/blog">Blog</Link>
           </li>
 
-          <Link to="/SignUp">
-            <button className="btn">REGISTER</button>
+          <Link>
+            <button onClick={() => loginWithRedirect()} className="btn">REGISTER</button>
           </Link>
-          <Link to="/SignIn">
-            <button className="btn btn__login">LOGIN</button>
+          <Link>
+            <button  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className="btn btn__login">LOG OUT</button>
           </Link>
         </ul>
         </nav>
