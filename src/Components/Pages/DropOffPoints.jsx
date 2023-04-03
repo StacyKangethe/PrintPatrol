@@ -15,20 +15,83 @@ import CssBaseline from '@mui/material/CssBaseline';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
+import { useSpring, animated } from "react-spring";
+import { rgb } from "@react-spring/shared";
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [ 
+  {
+   Id: 3,
+   image: 'https://images.unsplash.com/photo-1578070181910-f1e514afdd08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+   imageLabel: 'sticker',
+   location: 'Ecandi',
+   terms: 'Limuru Road', 
+   workinghours: 'Open: MON-SAT: 09:00-18:00',
+   contact: 'Call: 0741777986',
+  },
+  {
+    Id: 4,
+    image: 'https://images.unsplash.com/photo-1578070181910-f1e514afdd08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+    imageLabel: 'sticker',
+    location: 'Mr.Green Africa',
+    terms: 'Old Mombasa Road, Nairobi', 
+    workinghours: 'Open: 9.00Am-5.00PM',
+    contact: 'Call: 0709201000',
+   },
+   {
+    Id: 5,
+    image: 'https://images.unsplash.com/photo-1578070181910-f1e514afdd08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+    imageLabel: 'sticker',
+    location: 'Taka Taka Solutions',
+    terms: 'Karen, Nairobi', 
+    workinghours: 'Dunga Close, Off Dunga Road',
+    contact: 'Call: 0713293455',
+   },
+   {
+    Id: 6,
+    image: 'https://images.unsplash.com/photo-1578070181910-f1e514afdd08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+    imageLabel: 'sticker',
+    location: 'Glass House Kenya',
+    terms: 'Industrial Area, Nairobi', 
+    workinghours: 'Off Enterprise Road',
+    contact: 'Call: 0727737753',
+   },
+   {
+    Id: 7,
+    image: 'https://images.unsplash.com/photo-1578070181910-f1e514afdd08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+    imageLabel: 'sticker',
+    location: 'Virogreen Kenya Limited',
+    terms: 'Grogan Road, Nairobi', 
+    workinghours: 'Open: 9.00Am-5.00PM',
+    contact: 'Call: 0717663355',
+   },
+   {
+    Id: 8,
+    image: 'https://images.unsplash.com/photo-1578070181910-f1e514afdd08?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ymx1ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60',
+    imageLabel: 'sticker',
+    location: 'EcoPost Limited',
+    terms: 'Baba Dogo Road, Ruaraka, Nairobi', 
+    workinghours: 'Open: 9.00Am-5.00PM',
+    contact: 'Call: 0713678032',
+   },
+ ];
 
-const theme = createTheme();
-
+const theme = createTheme( {
+  palette: {
+    background: {
+    paper: '#D4B957'
+      },
+   },
+});
 
 function DropOffPoints() {
     return (
-    <ThemeProvider theme={theme}>
-    <CssBaseline />
-     <main>
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <main>
+        {/* Hero unit */}
         <Box
           sx={{
-            bgcolor: 'background.paper',
+            bgcolor: 'white',
             pt: 8,
             pb: 6,
           }}
@@ -38,54 +101,54 @@ function DropOffPoints() {
               component="h1"
               variant="h2"
               align="center"
-              color="text.primary"
-              paddingTop={12}
               gutterBottom
             >
-              Drop-Off Points
+             Drop-Off Points
             </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-            Are you looking to dispose-off the bottles at your premise? Scroll through the locations and find your closest collection point. If too bulky or too many beyond your comfort, request for a pick up using the form.
+            <Typography variant="h7" align="center" color="text.inherit">
+            Are you looking to dispose-off the bottles at your premise? Scroll through the locations and find your closest collection point. If too bulky or too many beyond your comfort, request for pick up using the contacts given.
             </Typography>
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
-        <Grid container spacing={4}>
-          {cards.map((card) => (
-            <Grid item key={card} xs={12} sm={6} md={4}>
-              <Card
-                sx={{ height: '100%', padding: theme.spacing(3), display: 'flex', flexDirection: 'column' }}
-              >           
-                    <Toolbar sx={{ flexGrow: 1 }} color="secondary">
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            {cards.map((card) => (
+              <Grid item key={card.Id} xs={12} sm={6} md={4}>
+                <Card
+                  
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+  
+                  <Toolbar 
+                  
+                  sx={{ flexGrow: 1 }} color="secondary">
                     <LocationOnIcon sx={{ mr: 2 }} />
-                    <Typography variant="h5" align="center" color="text.secondary">
-                        LOCATION 
+                    <Typography  variant="h5" component="div" align="center" color="text.inherit">
+                    {card.location}
                     </Typography>
-                    </Toolbar> 
-
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    Terms & Conditions
+                  </Toolbar>  
+                  <CardContent style={{backgroundColor: "white"}} sx={{ flexGrow: 1 }}>
+                  <Typography gutterBottom variant="h7" component="div" color="text.primary">
+                    {card.terms}
                   </Typography>
                   <Typography gutterBottom>
-                  Mon-Friday: 8.00Am-5.00pm<br></br>  
                   </Typography>
                   <Typography gutterBottom>
-                  Accepts only bottles
+                    {card.workinghours}
                   </Typography>
-                   
+                  <Typography gutterBottom>
+                    {card.contact}
+                  </Typography>
                 </CardContent>
-                <CardActions>
-                  <Button size="small">Call</Button>
-                  <Button size="small">Message</Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </main>
-    </ThemeProvider>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </main>
+    </ThemeProvider>  
+   
 
     );
 }
@@ -94,3 +157,5 @@ function DropOffPoints() {
 
 
 export default DropOffPoints;
+
+

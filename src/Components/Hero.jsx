@@ -26,11 +26,7 @@ function Hero() {
                         'DEPENDS',
                         'ON',
                         'YOU'
-                        ]} />
-                         
-                    <Button color="secondary" variant="contained">
-                    Learn More
-                    </Button>    
+                        ]} />   
                 </div>
         </div>
         

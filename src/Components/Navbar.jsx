@@ -3,6 +3,7 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import { BsCartFill } from 'react-icons/bs';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -62,10 +63,9 @@ function Navbar() {
           <Link to="/featured-post">Companies</Link>
           </li>
           <li>
-          <Link to="/about">About</Link>
-          </li>
-          <li>
-          <Link to="/blog">Blog</Link>
+          <Link to="/cart">
+            <BsCartFill />
+          </Link>
           </li>
 
           <Link>

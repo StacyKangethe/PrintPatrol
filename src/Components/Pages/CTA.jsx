@@ -16,10 +16,38 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { useSpring, animated } from "react-spring";
+import { Link } from "react-router-dom";
 
-const cards = [1, 2, 3];
+const cards = [ 
+  {
+   Id: 1,
+   image: 'https://images.unsplash.com/photo-1626747086388-b83fc4e1aca1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHRyYXNoJTIwY2FufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+   imageLabel: 'sticker',
+   location: 'Eldoret',
+   description: 'Collected this week', 
+   data: 2378,
+  },
+  {
+   Id: 2,
+   image: 'https://images.unsplash.com/photo-1648142375707-03918153f53e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJvdHRsaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+   imageLabel: 'sticker',
+   location: 'Eldoret',
+   description: 'Recycled', 
+   data: 1845,
+  },
+  {
+   Id: 3,
+   image: 'https://images.unsplash.com/photo-1641895862407-d4e23bccc950?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZGZpbGx8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60',
+   imageLabel: 'sticker',
+   location: 'Eldoret',
+   description: 'Taken to Landfill', 
+   data: 533,
+  },
+ ];
 
 const theme = createTheme();
+
+
 
 function Number({ n }) {
     const { number } = useSpring({
@@ -33,9 +61,10 @@ function Number({ n }) {
 
 function CTA() {
     return (
-    <ThemeProvider theme={theme}>
-    <CssBaseline />
-     <main>
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <main>
+        {/* Hero unit */}
         <Box
           sx={{
             bgcolor: 'background.paper',
@@ -49,57 +78,69 @@ function CTA() {
               variant="h2"
               align="center"
               color="text.primary"
-              paddingTop={8}
               gutterBottom
             >
               What is Glass THRIFT?
             </Typography>
-            <Typography variant="h5" align="center" color="text.secondary" paragraph>
-            We are building a circular eco-system for glass recycling in Kenya. By collaborating with individuals and companies, we facilitate the collection of unwanted bottles and glasses for recycling to save our landfills and create jobs. Let’s recycle glass waste.
+            <Typography variant="h6" align="center" color="text.inherit" paragraph>
+            We are building a circular eco-system for glass recycling in Kenya. By collaborating with individuals and companies, we facilitate the collection of unwanted bottles and glasses for recycling to save our landfills and create jobs. Recycling is the future.
             </Typography>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained">Learn How</Button>
-            </Stack>
+            <Link to="/shop">
+            <Button variant="contained"color="secondary">Learn How</Button>
+            </Link>
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
-        <Grid container spacing={4}>
-          {cards.map((card) => (
-            <Grid item key={card} xs={12} sm={6} md={4}>
-              <Card
-                sx={{ height: '100%', padding: theme.spacing(3), display: 'flex', flexDirection: 'column' }}
-              >           
-                    <Toolbar sx={{ flexGrow: 1 }} color="secondary">
+          {/* End hero unit */}
+          <Grid container spacing={4}>
+            {cards.map((card) => (
+              <Grid item key={card.Id} xs={12} sm={6} md={4}>
+                <Card
+                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                >
+                  <Toolbar sx={{ flexGrow: 1 }} color="secondary">
                     <LocationOnIcon sx={{ mr: 2 }} />
                     <Typography variant="h5" align="center" color="text.secondary">
-                        Nairobi
+                      {card.location}
                     </Typography>
-                    </Toolbar> 
-
-                <CardContent sx={{ flexGrow: 1 }}>
+                  </Toolbar> 
+                  <CardMedia
+                    component="img"
+                    sx={{
+                      // 16:9
+                      height: 220,
+                    }}
+                    image={card.image}
+                    alt={card.imageLabel}
+                  />
+                  <CardContent sx={{ flexGrow: 1 }}>
                   <Typography gutterBottom variant="h2" component="h2" color="secondary">
-                    <Number n={5000} />
+                    <Number n={card.data} />
                   </Typography>
                   <Typography gutterBottom>
-                   
                   </Typography>
                   <Typography gutterBottom>
-                  Bottles Collected
+                    {card.description}
                   </Typography>
-                   
                 </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </main>
+                  <CardActions>
+                  </CardActions>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </main>
     </ThemeProvider>
+    
+    
+    
+    
+    
+    
+    
+    
+   
 
     );
 }
