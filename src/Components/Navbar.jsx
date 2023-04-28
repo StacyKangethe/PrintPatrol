@@ -38,7 +38,7 @@ function Navbar() {
         <div className="header__content__logo">
         <img src="printpatrol_logo.png" className="App-logo" alt="logo" ></img>
         </div>
-        PRINT PATROL
+        <b>PRINT PATROL</b>
         
         <nav
           className={`${"header__content__nav"} 
