@@ -3,17 +3,11 @@ import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Navbar from '../Navbar';
-import Shop from './shop/Shop';
 import Box  from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Toolbar from "@mui/material/Toolbar";
-import CardActions from '@mui/material/CardActions';
-import { Button } from "@mui/material";
 import { createTheme, ThemeProvider  } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 

@@ -1,8 +1,5 @@
-import { Button } from "@mui/material";
 import React from "react";
 import video from '../assets/video.mp4';
-import MovingText from 'react-moving-text';
-import { useState } from "react";
 
 
 function Hero() {

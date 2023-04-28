@@ -1,22 +1,12 @@
 import React from "react";
 import Box  from "@mui/material/Box";
-import { Button, ImageListItem, Tabs } from "@mui/material";
+import { Button } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Grid from '@mui/material/Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import { Link } from "react-router-dom";
-import ImageList from '@mui/material/ImageList';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { shopPost } from "../products";
 import { Featured } from "./shop/featuredproduct";
 
