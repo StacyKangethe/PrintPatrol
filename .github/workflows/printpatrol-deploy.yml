@@ -17,9 +17,9 @@ jobs:
         - uses: actions/checkout@v2
         - uses: bounceapp/render-action@0.6.0
           with:
-            render-token: ${{secrets.RENDER_API_KEY}}
-            github-token: ${{secrets.ACC_API_KEY}} #This is the Git-Hub token
-            service-id: "srv-ch5mc90rddl7alc2s3gg" #This id is unique for each app
-            retries: 20
-            wait: 16000
-            sleep: 30000
+              render-token: ${{secrets.RENDER_API_KEY}}
+              github-token: ${{secrets.ACC_API_KEY}} #This is the Git-Hub token
+              service-id: "srv-ch5mc90rddl7alc2s3gg" #This id is unique for each app
+              retries: 20
+              wait: 16000
+              sleep: 30000
