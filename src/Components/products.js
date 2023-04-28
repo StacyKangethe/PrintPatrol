@@ -9,15 +9,15 @@ export const shopPost = [
     },
     {
         id: 2,
-        image: 'DJ_print.jpg',
+        image: 'save.jpg',
         imageLabel: 'sticker',
-        productName: 'Sensimilia',
+        productName: 'Transcendance',
         description: 'Halftone print featuring tomatoes (nyanya) in a crate with a 4/20 price tag. It is a nod to the marijuana culture that exists within Nairobi.A clever play on words that combines a Swahili/slang term with a market reference to create a unique design.', 
         price: 2500,
     },
     {
         id: 3,
-        image: 'bottle.png',
+        image: 'nyanyadesign.jpg',
         imageLabel: 'sticker',
         productName: 'Nyanya 4/20',
         description: ' Print - 2 color Puff Art Print. Got inspired by listening to Sensimilia tracks and individuals pushing themselves to provide quality Sensi for the healing of the nation . Sensimilia is a highly concentrated form of female cannabis flower that has never been exposed to male plants & therefore be any strain.' ,
