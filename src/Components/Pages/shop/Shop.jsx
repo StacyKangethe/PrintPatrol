@@ -26,55 +26,56 @@ import { Product } from './product';
  * Retrieve the current cart or create one if one does not exist
  * https://commercejs.com/docs/sdk/cart
  */
-  
+
+
 const shopPost = [ 
   {
    id: 1,
-   image: 'https://images.unsplash.com/photo-1626747086388-b83fc4e1aca1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHRyYXNoJTIwY2FufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+   image: "cannabeast.jpg",
    imageLabel: 'sticker',
-   productName: 'Metal Bins',
-   description: 'Colored bins used in commercial buildings', 
-   price: 3000,
+   productName: 'Cannabeast',
+   description: 'It goes without saying that most cannabis users tend to be creative individuals or are people who find their way around things.. So this design is inspired by a master of adaptation (change) found in nature; the chameleon', 
+   price: 2700,
   },
   {
    id: 2,
-   image: 'https://images.unsplash.com/photo-1610106836884-ec496933aff7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
+   image: 'DJ_print.jpg',
    imageLabel: 'sticker',
-   productName: 'Striped Metal Bins',
-   description: 'Guided bins with instructions of waste disposal', 
-   price: 1200,
+   productName: 'Sensimilia',
+   description: 'Halftone print featuring tomatoes (nyanya) in a crate with a 4/20 price tag. It is a nod to the marijuana culture that exists within Nairobi.A clever play on words that combines a Swahili/slang term with a market reference to create a unique design.', 
+   price: 2500,
   },
   {
    id: 3,
-   image: 'https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fHRyYXNoJTIwY2FufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+   image: 'nyanyadesign.jpg',
    imageLabel: 'sticker',
-   productName: 'Sticker Bins',
-   description: 'Plastic Bins with colorful stickers indicating type of waste.', 
-   price: 800,
+   productName: 'Nyanya 4/20',
+   description: ' Print - 2 color Puff Art Print. Got inspired by listening to Sensimilia tracks and individuals pushing themselves to provide quality Sensi for the healing of the nation . Sensimilia is a highly concentrated form of female cannabis flower that has never been exposed to male plants & therefore be any strain.' ,
+   price: 2500,
   },
   {
    id: 4,
-   image: 'https://images.unsplash.com/photo-1616924416730-5566217be0b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fHJlY3ljbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=900&q=60',
+   image: 'hempire.png',
    imageLabel: 'sticker',
-   productName: 'B&W Labels',
-   description: 'Well designed Labels in well selected typography.', 
-   price: 500,
+   productName: 'Hempire',
+   description: 'Print - Halftone Peter tosh print,Puff Herb Stroke. For this Merch design ,I got inspired by Peter tosh lyrics on Legalize it track for personal, spiritual,medicinal use and decriminalization of Herb worldwide ,ending illigal humiliation to individuals.', 
+   price: 2500,
   },
   {
    id: 5,
-   image: 'https://images.unsplash.com/photo-1572010696997-c73e95aeebe8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGFja2luZyUyMGJveGVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+   image: 'stonedagain.jpg',
    imageLabel: 'sticker',
-   productName: 'Labelled Boxes',
-   description: 'Used to dispose off glass and storing glass bottles during transportation.', 
-   price: 80,
+   productName: 'Stoned Again',
+   description: 'The design of Hempire combines two powerful elements: Hemp and the Empire State Building. By blending them together in both name and image, we hope to showcase the incredible potential of hemp. We want to elevate hemp to the same level of admiration and respect as iconic structures like the Empire State Building.Let us embrace the Hempire and unleash its full potential! Bud business is indeed, good business.', 
+   price: 2500,
   },
   {
    id: 6,
-   image: 'https://images.unsplash.com/photo-1675395594169-c6b14260e271?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fHJlY3ljbGUlMjBzaWdufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60',
+   image: 'burninginsense.jpg',
    imageLabel: 'sticker',
-   productName: 'Wood Signage',
-   description: 'Used in public spaces to guide the audience on what is expected within that environment.', 
-   price: 350,
+   productName: 'Burning in Sense',
+   description: 'The design is inspired by the criminalization of the herb(marijuaña), It paints a picture for the herb activists that the plant is a sacrament and sweet incense given to us by nature for the service of man.', 
+   price: 2500,
   },
  ];
 
@@ -101,10 +102,12 @@ export default function Shop() {
               color="text.primary"
               gutterBottom
             >
-             Waste Accessories
+             420 Ganja Farm
             </Typography>
             <Typography variant="h7" align="center" color="text.inherit" paragraph>
-            Meet our certified sellers of our 3 superpowers. Labels, Bins and Packaging Containers right to your doorstep.<br></br>It starts with you, disposing waste in the correct bin, a well labelled bin.
+            As herb enthusiasts, we're always looking for ways to herbvocate and promote the use of this amazing plant. We are against seeing people being imprisoned and stigmatized just for using or associating with this herb. We know that persistence and joint efforts can make a difference.<br></br>
+            ‌So let's celebrate 4/20 with a joint effort to push for the decriminalization and legalization of this amazing plant.<br></br> 
+            When we all come together, great things can happen.
             </Typography>
           </Container>
         </Box>

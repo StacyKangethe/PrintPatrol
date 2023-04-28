@@ -2,13 +2,10 @@ import React, { useEffect, useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 import { BsCartFill } from 'react-icons/bs';
 
 function Navbar() {
   const navigate = useNavigate();
-  const { loginWithRedirect } = useAuth0();
-  const { logout } = useAuth0();
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
     width: 0,
@@ -40,9 +37,9 @@ function Navbar() {
     <header className="header">
       <div className="header__content">
         <div className="header__content__logo">
-        GLASS<br></br>THRIFT
+        <img src="printpatrol_logo.png" className="App-logo" alt="logo" ></img>
         </div>
-        <img src="Logo.png" className="App-logo" alt="logo" ></img>
+        PRINT PATROL
         
         <nav
           className={`${"header__content__nav"} 
@@ -57,23 +54,16 @@ function Navbar() {
           <Link to="/shop">Shop</Link>
           </li>
           <li>
-          <Link to="/drop-off-points">Drop-Off Points</Link>
+          <Link to="/drop-off-points">About</Link>
           </li>
           <li>
-          <Link to="/featured-post">Companies</Link>
+          <Link to="/featured-post">Contact</Link>
           </li>
           <li>
           <Link to="/cart">
             <BsCartFill />
           </Link>
           </li>
-
-          <Link>
-            <button onClick={() => loginWithRedirect()} className="btn">REGISTER</button>
-          </Link>
-          <Link>
-            <button  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className="btn btn__login">LOG OUT</button>
-          </Link>
         </ul>
         </nav>
         <div className="header__content__toggle">

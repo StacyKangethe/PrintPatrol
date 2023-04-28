@@ -14,14 +14,14 @@ export const Product = (props) => {
     
       <CardMedia component="img" sx={{
         // 16:9
-        height: 220,
+        height: 300,
       }}
         src={image} />
       <CardContent sx={{ flexGrow: 1 }} justify-content="center">
       <Typography gutterBottom variant="h5" component="div">
         {productName}
       </Typography>
-      <Typography gutterBottom variant="h5" component="div">
+      <Typography gutterBottom variant="h7" component="div">
         KSh{price}
       </Typography>
       </CardContent>

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
 import { shopPost } from "../../products";
 import { CartItem } from "./cart-item";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./cart.css";
 export const Cart = () => {
@@ -26,17 +26,11 @@ export const Cart = () => {
 
       {totalAmount > 0 ? (
         <div className="checkout">
-          <p> Subtotal: KSh{totalAmount} </p>
+          <p> Pay: KSh{totalAmount} </p>
           <button onClick={() => navigate("/shop")}> Continue Shopping </button>
-          <button
-            onClick={() => {
-              checkout();
-              navigate("/checkout");
-            }}
-          >
-            {" "}
-            Checkout{" "}
-          </button>
+          <Link to="https://mradi.co/printpatrol">
+            <button>Checkout</button>
+          </Link>
         </div>
       ) : (
         <h1> Your Shopping Cart is Empty</h1>
@@ -44,3 +38,5 @@ export const Cart = () => {
     </div>
   );
 };
+
+//Using MPESA API from mradi using this link https://mradi.co/printpatrol
