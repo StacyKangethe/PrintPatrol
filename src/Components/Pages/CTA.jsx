@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Box  from "@mui/material/Box";
-import { Button } from "@mui/material";
+import { Button, Tab, Tabs, useMediaQuery } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Grid from '@mui/material/Grid';
@@ -9,8 +9,9 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Link } from "react-router-dom";
 import { shopPost } from "../products";
 import { Featured } from "./shop/featuredproduct";
+import NavigateTabs from "./shop/tabs";
 
-const itemData = [
+const allItems = [
   {
     img: 'apparel.png',
     title: 'Apparel',
@@ -27,15 +28,28 @@ const itemData = [
 const theme = createTheme();
 
 
+
+
+
+
 function CTA() {
+  const [value, setValue] = useState("all");
+
+  const breakPoint = useMediaQuery("(min-width:600px)");
+
+
+  
+
     return (
+      
       <ThemeProvider theme={theme}>
       <CssBaseline />
+      
       <main>
         {/* Hero unit */}
         <Box
           sx={{
-            bgcolor: 'Background.paper',
+            bgcolor: '#FFDE59',
             pt: 8,
             pb: 6,
           }}
@@ -60,30 +74,52 @@ function CTA() {
           </Container>
         </Box>
         
-        <Box sx={{ bgcolor: '#FFFFFF'}} maxWidth="md" margin="80px">
-        <Typography
+        <Box sx={{ bgcolor: '#FF3131', pb: 8, pt: 6 }}>
+              <Typography
                 component="h1"
-                variant="h2"
+                variant="h7"
                 align="center"
                 color="text.primary"
                 gutterBottom
               >
-                420 Collection
+                Our Featured Products
               </Typography>
+              <Tabs
+                textColor="primary"
+                indicatorColor="primary"
+                value={value}
+               // onChange={handleChange}
+                centered
+                TabIndicatorProps={{ sx: { display: breakPoint ? "block" : "none"} }}
+                sx={{
+                  m: "25px",
+                  "& .MuiTabs-flexContainer": {
+                    flexWrap: "wrap"
+                  }
+                }}
+              >
+                <Tab label="ALL" value="all" />
+                <Tab label="420 Collection" value="puffPuff" />
+                <Tab label="Home Accessories" value="homeAccessories" />
+                <Tab label="Street Wear" value="streetWear" />
+                
+              </Tabs>
           <Box
-            margin="0 auto"
+            margin="40px"
             display="grid"
             gridTemplateColumns="repeat(autofill)"
             justifyContent="space-around"
             rowGap="20px"
             columnGap="1.33%"
           >
+        
             <Grid container spacing={4}>
             {shopPost.map((post) => (
               <Grid item xs={12} sm={6} md={4}>
                 <Featured data={post} />
               </Grid>
             ))}
+            
           </Grid>
           </Box>
         </Box>
@@ -98,10 +134,10 @@ function CTA() {
     
     
     
-    
    
 
     );
+   
 }
 
 

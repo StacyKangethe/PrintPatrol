@@ -53,12 +53,6 @@ function Navbar() {
           <Link to="/shop">Shop</Link>
           </li>
           <li>
-          <Link to="/drop-off-points">About</Link>
-          </li>
-          <li>
-          <Link to="/featured-post">Contact</Link>
-          </li>
-          <li>
           <Link to="/cart">
             <BsCartFill />
           </Link>
