@@ -29,7 +29,7 @@ const shopPost = [
    id: 2,
    image: 'save.jpg',
    imageLabel: 'sticker',
-   productName: 'Sensimilia',
+   productName: 'Transcendance',
    description: 'Halftone print featuring tomatoes (nyanya) in a crate with a 4/20 price tag. It is a nod to the marijuana culture that exists within Nairobi.A clever play on words that combines a Swahili/slang term with a market reference to create a unique design.', 
    price: 2500,
   },
