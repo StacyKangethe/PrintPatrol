@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Product } from './product';
+import "./shop.css";
  
 //App.js
 
@@ -22,7 +23,7 @@ const shopPost = [
    image: "nyanyadesign.jpg",
    imageLabel: 'sticker',
    productName: 'Nyanya 4/20',
-   description: 'It goes without saying that most cannabis users tend to be creative individuals or are people who find their way around things.. So this design is inspired by a master of adaptation (change) found in nature; the chameleon', 
+   description: 'A clever play on words that combines a Swahili/slang term with a market reference to create a unique design. It is a nod to the marijuana culture that exists within Nairobi.', 
    price: 2700,
   },
   {
@@ -30,7 +31,7 @@ const shopPost = [
    image: 'sensimilia.jpg',
    imageLabel: 'sticker',
    productName: 'Sensi',
-   description: 'Halftone print featuring tomatoes (nyanya) in a crate with a 4/20 price tag. It is a nod to the marijuana culture that exists within Nairobi.A clever play on words that combines a Swahili/slang term with a market reference to create a unique design.', 
+   description: 'Got inspired by listening to Sensimilia tracks and individuals pushing themselves to provide quality Sensi for the healing of the nation . Sensimilia is a highly concentrated form of female cannabis flower that has never been exposed to male plants & therefore be any strain.', 
    price: 2500,
   },
   {
@@ -38,7 +39,7 @@ const shopPost = [
    image: 'cannabeast.jpg',
    imageLabel: 'sticker',
    productName: 'Cannabeast',
-   description: ' Print - 2 color Puff Art Print. Got inspired by listening to Sensimilia tracks and individuals pushing themselves to provide quality Sensi for the healing of the nation . Sensimilia is a highly concentrated form of female cannabis flower that has never been exposed to male plants & therefore be any strain.' ,
+   description: 'It goes without saying that most cannabis users tend to be creative individuals or are people who find their way around things.. So this design is inspired by a master of adaptation (change) found in nature; the chameleon.' ,
    price: 2500,
   },
   {
@@ -46,7 +47,7 @@ const shopPost = [
    image: 'hempire.png',
    imageLabel: 'sticker',
    productName: 'Hempire',
-   description: 'Print - Halftone Peter tosh print,Puff Herb Stroke. For this Merch design ,I got inspired by Peter tosh lyrics on Legalize it track for personal, spiritual,medicinal use and decriminalization of Herb worldwide ,ending illigal humiliation to individuals.', 
+   description: 'The design of Hempire combines two powerful elements: Hemp and the Empire State Building. By blending them together in both name and image, we hope to showcase the incredible potential of hemp. We want to elevate hemp to the same level of admiration and respect as iconic structures like the Empire State Building.Let us embrace the Hempire and unleash its full potential! Bud business is indeed, good business.', 
    price: 2500,
   },
   {
@@ -54,7 +55,7 @@ const shopPost = [
    image: 'Petertosh.jpg',
    imageLabel: 'sticker',
    productName: 'Peter Tosh',
-   description: 'The design of Hempire combines two powerful elements: Hemp and the Empire State Building. By blending them together in both name and image, we hope to showcase the incredible potential of hemp. We want to elevate hemp to the same level of admiration and respect as iconic structures like the Empire State Building.Let us embrace the Hempire and unleash its full potential! Bud business is indeed, good business.', 
+   description: 'For this Merch design ,I got inspired by Peter tosh lyrics on Legalize it track for personal, spiritual,medicinal use and decriminalization of Herb worldwide ,ending illigal humiliation to individuals.Print;Halftone Peter tosh print,Puff Herb Stroke.', 
    price: 2500,
   },
   {

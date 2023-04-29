@@ -8,6 +8,8 @@ import CTA from './Pages/CTA';
 import Home from './Pages/Home';
 import { ShopContextProvider } from './context/shop-context';
 import { Cart } from './Pages/cart/Cart';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 function RoutesTree() {
     return (
@@ -22,6 +24,8 @@ function RoutesTree() {
                     <Route path="/recycling-companies" element={<RecyclingCompanies />} />
                     <Route path="/waste-companies" element={<WasteCompanies />} />
                     <Route path="/cart" element={<Cart />} />
+                    <Route path="/" element={<Navbar />} />
+                    <Route path="/" element={<Footer />} />
                 </Routes>
             </ShopContextProvider>
         </div>

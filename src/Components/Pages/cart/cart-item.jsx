@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ShopContext } from '../../context/shop-context';
+import Box from '@mui/material/Box';
 
 export const CartItem = (props) => {
   const { id, productName, price, image } = props.data;
@@ -7,7 +8,8 @@ export const CartItem = (props) => {
     useContext(ShopContext);
 
   return (
-    <div className="cartItem">
+    <Box sx={{ bgcolor: 'background.paper', pt: 8, pb: 6 }} justifyContent="center">
+      <div className="cartItem">
       <img src={image} alt=""/>
       <div className="description">
         <p>
@@ -23,6 +25,7 @@ export const CartItem = (props) => {
           <button onClick={() => addToCart(id)}> + </button>
         </div>
       </div>
-    </div>
+      </div>
+    </Box>
   );
 };

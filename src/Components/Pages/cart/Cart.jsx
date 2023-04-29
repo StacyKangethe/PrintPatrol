@@ -3,39 +3,49 @@ import { ShopContext } from "../../context/shop-context";
 import { shopPost } from "../../data";
 import { CartItem } from "./cart-item";
 import { Link, useNavigate } from "react-router-dom";
+import Box  from "@mui/material/Box";
+import "./cart.scss";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
-import "./cart.css";
 export const Cart = () => {
   const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
 
   const navigate = useNavigate();
 
-  return (
-    <div className="cart">
-      <div>
-        <h1>Your Cart Items</h1>
-      </div>
-      <div className="cart">
-        {shopPost.map((post) => {
-          if (cartItems[post.id] !== 0) {
-            return <CartItem data={post} />;
-          }
-        })}
-      </div>
+  const theme = createTheme();
 
-      {totalAmount > 0 ? (
-        <div className="checkout">
-          <p> Pay: KSh{totalAmount} </p>
-          <button onClick={() => navigate("/shop")}> Continue Shopping </button>
-          <Link to="https://mradi.co/printpatrol">
-            <button>Checkout</button>
-          </Link>
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+    <Box sx={{ bgcolor: 'background.paper', pt: 8, pb: 6 }} justifyContent="center">
+      <div className="cart">
+        <div>
+          <h2>Your Cart Items</h2>
         </div>
-      ) : (
-        <h1> Your Shopping Cart is Empty</h1>
-      )}
-    </div>
+        <div className="cart">
+          {shopPost.map((post) => {
+            if (cartItems[post.id] !== 0) {
+              return <CartItem data={post} />;
+            }
+          })}
+        </div>
+
+        {totalAmount > 0 ? (
+          <div className="checkout">
+            <p> Pay: KSh{totalAmount} </p>
+            <button onClick={() => navigate("/shop")}> Continue Shopping </button>
+            <Link to="https://mradi.co/printpatrol">
+              <button>Checkout</button>
+            </Link>
+          </div>
+        ) : (
+          <h4>Empty</h4>
+        )}
+      </div>
+    </Box>
+    </ThemeProvider>
   );
 };
 

@@ -4,7 +4,7 @@ export const shopPost = [
         image: "nyanyadesign.jpg",
         imageLabel: 'sticker',
         productName: 'Nyanya 4/20',
-        description: 'It goes without saying that most cannabis users tend to be creative individuals or are people who find their way around things.. So this design is inspired by a master of adaptation (change) found in nature; the chameleon', 
+        description: 'A clever play on words that combines a Swahili/slang term with a market reference to create a unique design.', 
         price: 2700,
        },
        {
