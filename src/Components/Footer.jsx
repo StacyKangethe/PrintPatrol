@@ -6,6 +6,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import RoomIcon from '@mui/icons-material/Room';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
   
   const Container = styled.div`
     display: flex;
@@ -109,7 +110,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
         <Title>FIND US ON:</Title>
             <SocialContainer  justifyContent="center" style={{marginLeft:"40px"}}>
                 <SocialIcon color="3B5999">
-                    <PhoneIcon />
+                    <WhatsAppIcon />
                 </SocialIcon>
                 <SocialIcon color="E4405F">
                     <InstagramIcon />

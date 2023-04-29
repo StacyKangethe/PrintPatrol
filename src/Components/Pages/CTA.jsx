@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Link } from "react-router-dom";
 import { shopPost } from "../products";
 import { Featured } from "./shop/featuredproduct";
+import Newsletter from "../Newsletter";
 
 const itemData = [
   {
@@ -111,6 +112,7 @@ function CTA() {
             ))}
             </Grid>
           </Box>
+                   
         </Box>
         {/* End hero unit */}
       </main>
