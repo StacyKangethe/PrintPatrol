@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Box  from "@mui/material/Box";
 import { Button, Tab, Tabs, useMediaQuery } from "@mui/material";
 import Typography from "@mui/material/Typography";
@@ -9,9 +9,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Link } from "react-router-dom";
 import { shopPost } from "../products";
 import { Featured } from "./shop/featuredproduct";
-import NavigateTabs from "./shop/tabs";
 
-const allItems = [
+const itemData = [
   {
     img: 'apparel.png',
     title: 'Apparel',
@@ -33,12 +32,8 @@ const theme = createTheme();
 
 
 function CTA() {
-  const [value, setValue] = useState("all");
 
   const breakPoint = useMediaQuery("(min-width:600px)");
-
-
-  
 
     return (
       
@@ -49,7 +44,7 @@ function CTA() {
         {/* Hero unit */}
         <Box
           sx={{
-            bgcolor: '#FFDE59',
+            bgcolor: 'Background.paper',
             pt: 8,
             pb: 6,
           }}
@@ -87,7 +82,7 @@ function CTA() {
               <Tabs
                 textColor="primary"
                 indicatorColor="primary"
-                value={value}
+                // value={music}
                // onChange={handleChange}
                 centered
                 TabIndicatorProps={{ sx: { display: breakPoint ? "block" : "none"} }}
@@ -98,11 +93,7 @@ function CTA() {
                   }
                 }}
               >
-                <Tab label="ALL" value="all" />
-                <Tab label="420 Collection" value="puffPuff" />
-                <Tab label="Home Accessories" value="homeAccessories" />
-                <Tab label="Street Wear" value="streetWear" />
-                
+                <Tab label="Metropolis x Print Patrol" value="music" />
               </Tabs>
           <Box
             margin="40px"
@@ -110,20 +101,17 @@ function CTA() {
             gridTemplateColumns="repeat(autofill)"
             justifyContent="space-around"
             rowGap="20px"
-            columnGap="1.33%"
+            columnGap="1%"
           >
-        
-            <Grid container spacing={4}>
+            <Grid container spacing={4} justifyContent="center">
             {shopPost.map((post) => (
-              <Grid item xs={12} sm={6} md={4}>
-                <Featured data={post} />
-              </Grid>
+              <div key={post.id} style={{ padding:"0.5em", display:"flex", flexDirection:"column", justifyContent:"center" }}>
+                  <Featured data={post} />
+              </div>
             ))}
-            
-          </Grid>
+            </Grid>
           </Box>
         </Box>
-        
         {/* End hero unit */}
       </main>
     </ThemeProvider>

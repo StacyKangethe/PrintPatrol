@@ -2,6 +2,35 @@ import React, { useContext, useState } from "react";
 import { ShopContext } from '../../context/shop-context';
 import { CardContent, CardMedia, Typography, createMuiTheme } from "@mui/material";
 import Card from '@mui/material/Card';
+import CardActionArea from "@mui/material/CardActionArea";
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+
+type Props = {
+  hoverShadow: number;
+};
+
+const options = {
+  shouldForwardProp: (prop) => prop !== 'hoverShadow',
+};
+
+const StyledCard = styled(
+  Card,
+  options,
+)<Card>(({ theme, hoverShadow = 1}) => ({
+  ':hover': {
+    boxShadow: theme.shadows[hoverShadow],
+  },
+}));
+
+const bull = (
+  <Box
+    component="span"
+    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.9)' }}
+  >
+    .
+  </Box>
+);
 
 
 export const Featured = (props) => {
@@ -13,24 +42,35 @@ export const Featured = (props) => {
 
   const [active, setActive] = useState(false);
 
-
   return (
-    <div onClick={() => setActive(!active)}>
-    <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <CardMedia component="img" sx={{
-        // 16:9
-        height: 300,
-      }}
-       src={image} />
-      <CardContent sx={{ flexGrow: 1 }} justify-content="center">
-      <Typography gutterBottom variant="h5" component="div">
-        {productName}
-      </Typography>
-      <Typography gutterBottom variant="h7" component="div">
-        KSh{price}
-      </Typography>
-      </CardContent>
-    </Card>
+    <div style={{ textAlign: "center", color: "green" }} onClick={() => setActive(!active)}>
+      <center>
+        <Card 
+          sx={{ 
+            maxWidth: 345,
+            ':hover': {
+              boxShadow:20,
+            },
+          }} 
+          variant="outlined">
+          <CardActionArea >
+            <CardMedia
+              component="img"
+              height="140" 
+              src={image} 
+              alt="Metropolis X PrintPatrol"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h6" component="div">
+                {productName}
+              </Typography>
+              <Typography variant="body2" component="div">
+                KSh{price}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </center>
     </div>
   );
 };
