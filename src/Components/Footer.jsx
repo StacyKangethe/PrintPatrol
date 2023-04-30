@@ -7,6 +7,8 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import RoomIcon from '@mui/icons-material/Room';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { Link } from "react-router-dom";
+
   
   const Container = styled.div`
     display: flex;
@@ -78,10 +80,6 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
     align-items: center;
   `;
   
-  const Payment = styled.img`
-      width: 50%;
-  `;
-  
   const Footer = () => {
     return (
       <Container>
@@ -107,20 +105,20 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
           
         </Center>
         <Right>
-        <Title>FIND US ON:</Title>
+        <Title>Follow Print Patrol at:</Title>
             <SocialContainer  justifyContent="center" style={{marginLeft:"40px"}}>
-                <SocialIcon color="3B5999">
+                <Link to="https://wa.me/message/IEV6CAPOIEIVB1" color="3B5999">
                     <WhatsAppIcon />
-                </SocialIcon>
-                <SocialIcon color="E4405F">
+                </Link>
+                <Link to="https://www.instagram.com/prints_weknow/" color="E4405F">
                     <InstagramIcon />
-                </SocialIcon>
-                <SocialIcon color="55ACEE">
+                </Link>
+                <Link to="https://twitter.com/prints_weknow" color="55ACEE">
                     <TwitterIcon />
-                </SocialIcon>
-                <SocialIcon color="E60023">
+                </Link>
+                <Link to="mailto:printsweknow@gmail.com?" color="E60023">
                     <MailOutlineIcon />
-                </SocialIcon>
+                </Link>
           </SocialContainer>
         </Right>
       </Container>

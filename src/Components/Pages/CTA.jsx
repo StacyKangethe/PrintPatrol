@@ -11,6 +11,8 @@ import { shopPost } from "../products";
 import { Featured } from "./shop/featuredproduct";
 import Newsletter from "../Newsletter";
 
+
+
 const itemData = [
   {
     img: 'apparel.png',
@@ -111,20 +113,12 @@ function CTA() {
               </div>
             ))}
             </Grid>
-          </Box>
-                   
+            
+          </Box> 
         </Box>
         {/* End hero unit */}
       </main>
     </ThemeProvider>
-    
-    
-    
-    
-    
-    
-    
-   
 
     );
    
