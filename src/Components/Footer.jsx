@@ -105,7 +105,7 @@ import { Link } from "react-router-dom";
           
         </Center>
         <Right>
-        <Title>Follow Print Patrol at:</Title>
+        <Title>Send a message at:</Title>
             <SocialContainer  justifyContent="center" style={{marginLeft:"40px"}}>
                 <Link to="https://wa.me/message/IEV6CAPOIEIVB1" color="3B5999">
                     <WhatsAppIcon />

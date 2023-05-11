@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import { shopPost } from "../products";
 import { Featured } from "./shop/featuredproduct";
 import Newsletter from "../Newsletter";
+import FeaturedPost from "./shop/FeaturedPost";
 
 
 
@@ -61,13 +62,13 @@ function CTA() {
                 color="text.primary"
                 gutterBottom
               >
-                420 Ganja Farm
+                420 Collection
               </Typography>
               <Typography variant="h6" align="center" color="text.inherit" paragraph>
-                Welcome to Print Patrol's inaugural collection that drops today with a bhang! How timely is it that we get to embark on our journey on such a high note? Keep <b>scrolling</b>.
+                Welcome to Print Patrol's inaugural collection that dropped with a bhang! How timely is it that we get to embark on our journey on such a high note? Keep <b>scrolling</b>.
               </Typography>
               <Link to="/shop">
-                <Button variant="contained"color="inherit">Check out our exclusive 4/20 merch</Button>
+                <Button variant="contained"color="inherit">Checkout our inclusive 4/20 collection</Button>
               </Link>
           </Container>
         </Box>
@@ -113,11 +114,13 @@ function CTA() {
               </div>
             ))}
             </Grid>
-            
+          
           </Box> 
         </Box>
+        
         {/* End hero unit */}
       </main>
+      
     </ThemeProvider>
 
     );
@@ -128,3 +131,5 @@ function CTA() {
 
 
 export default CTA;
+
+//  add at line 117 <FeaturedPost type="featured"/> 

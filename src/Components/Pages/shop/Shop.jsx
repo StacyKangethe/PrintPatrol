@@ -91,7 +91,7 @@ export default function Shop() {
               color="text.primary"
               gutterBottom
             >
-             420 Ganja Farm
+             IN-clusive 420 Collection
             </Typography>
             <Typography variant="h7" align="center" color="text.inherit" paragraph>
             As herb enthusiasts, we're always looking for ways to herbvocate and promote the use of this amazing plant. We are against seeing people being imprisoned and stigmatized just for using or associating with this herb. We know that persistence and joint efforts can make a difference.<br></br>
